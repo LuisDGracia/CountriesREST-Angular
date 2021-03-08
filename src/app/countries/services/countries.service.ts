@@ -21,8 +21,8 @@ export class CountriesService {
   }
 
   Loadcountries(){
-    this.http.get(`${this.url}/all${this.filter}`)
-        .subscribe( ( resp: any ) => this._countries = resp )
+    this.http.get<Country[]>(`${this.url}/all${this.filter}`)
+        .subscribe( ( resp ) => this._countries = resp )
   }
 
 }
