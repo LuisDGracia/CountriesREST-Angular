@@ -1,1 +1,10 @@
-<p>filters works!</p>
+<form (ngSubmit)="buscar()" autocomplete="off" >
+  <input 
+    type="text"
+    name="pais"
+    placeholder="Buscar Pais..."
+    [(ngModel)]="pais"
+  />
+
+</form>
+

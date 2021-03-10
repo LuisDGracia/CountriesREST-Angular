@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CountriesService } from '../../services/countries.service';
 
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.css']
 })
-export class FiltersComponent implements OnInit {
+export class FiltersComponent {
 
-  constructor() { }
+  pais: string="";
 
-  ngOnInit(): void {
+  constructor( private countriesService: CountriesService ) { }
+
+  buscar(){
+    console.log( this.pais )
+
+    console.log(this.countriesService.getCountry( this.pais ))
+
+    this.pais = ''
   }
 
 }

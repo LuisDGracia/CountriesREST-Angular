@@ -25,4 +25,8 @@ export class CountriesService {
         .subscribe( ( resp ) => this._countries = resp )
   }
 
+  getCountry( searchOpt: string ){
+    return this._countries.filter( country => country.name.toLowerCase().includes( searchOpt.toLowerCase() ) )
+  }
+
 }
